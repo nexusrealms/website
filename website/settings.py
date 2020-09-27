@@ -30,6 +30,16 @@ DEBUG = environ.get('DEBUG')
 
 ALLOWED_HOSTS = []
 
+# Amazon Web Services (AWS)
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+# AWS - Login Credentials
+AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
+
+# AWS - Simple Email Service (SES)
+AWS_SES_REGION_NAME = environ.get('AWS_SES_REGION_NAME')
+AWS_SES_REGION_ENDPOINT = environ.get('AWS_SES_REGION_ENDPOINT')
 
 # Application definition
 
@@ -40,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +81,8 @@ TEMPLATES = [
         },
     },
 ]
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
 
 WSGI_APPLICATION = 'website.wsgi.application'
 

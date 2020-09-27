@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {% load static %}
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="{% static 'img/favicon-16x16.svg' %}">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="{% static 'img/favicon-32x32.svg' %}">
+    <link rel="icon" type="image/svg+xml" sizes="180x180" href="{% static 'img/apple-touch-icon.svg' %}">
+    <link rel="icon" type="image/svg+xml" sizes="192x192" href="{% static 'img/android-chrome-192x192.svg' %}">
+    <link rel="icon" type="image/svg+xml" sizes="512x512" href="{% static 'img/android-chrome-512x512.svg' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-flat-extras.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-flat.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    {% block header %}{% endblock %}
+
+    {% block title %}{% endblock %}
+
+  </head>
+
+    {% block style %}{% endblock %}
+
+  <body>
+
+    {% block content %}{% endblock %}
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

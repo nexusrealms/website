@@ -1,0 +1,44 @@
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in form.errors %}
+            <div class="alert alert-warning" role="alert">
+                <li>{{ error }}</li>
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </div>
+{% endif %}
+<form method="POST" action="#contactus">
+    {% csrf_token %}
+    {% load widget_tweaks %}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <div>{{ form.firstname.label }}</div>
+            <div>{% render_field form.firstname  class="form-control" size=20 %}</div>
+        </div>
+        <div class="form-group col-md-6">
+            <div>{{ form.lastname.label }}</div>
+            <div>{% render_field form.lastname class="form-control" size=20 %}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div>{{ form.email.label }}</div>
+        <div>{% render_field form.email class="form-control" size=20 %}</div>
+    </div>
+    <div class="form-group">
+        <div>{{ form.subject.label }}</div>
+        <div>{% render_field form.subject class="form-control" size=20 %}</div>
+    </div>
+    <div class="form-group">
+        <div>{{ form.message.label }}</div>
+        <div>{% render_field form.message class="form-control" size=20 %}</div>
+    </div>
+    <!--<div class="mt-4 mb-4">"form.recaptcha"</div>-->
+    <button type="submit" class="contact-form mb-4 btn btn-secondary submit">Submit</button>
+</form>

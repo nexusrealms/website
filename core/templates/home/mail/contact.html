@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p><strong>This is a message sent from our website's <a style="text-decoration: none; color: black" href="{% url 'index' %}#contactus">contact form</a>:</strong></p>
+        <p><strong>From:</strong> {{ firstname }}  {{ lastname }}  ({{ email }})</p>
+        <p>{{ message }}</p>
+    </body>
+</html>

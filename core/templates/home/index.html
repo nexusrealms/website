@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Home | Nexus Realms</title>
+{% endblock %}
+
+{% block style %}
+<style>
+.bg-img-1, .bg-img-2, .bg-img-3 {
+    /*opacity: 0.9;*/
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-img-1 {
+    background-image: url("{% static 'img/parallax-1.svg' %}");
+    min-height: 100%;
+}
+
+.bg-img-2 {
+    background-image: url("{% static 'img/parallax-2.svg' %}");
+    min-height: 800px;
+}
+.bg-img-3 {
+  background-image: url("{% static 'img/parallax-3.svg' %}");
+  min-height: 800px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bg-img-1">
+    <div class="presentation">
+        {% include 'navigation.html' %}
+        <header>
+            <div class="cover">
+                <div class="logo"><img src="{% static 'img/nexus-realms.svg' %}"></div>
+                <div class="text-center service">
+                    <p class="lead trademark desktop-br" style="color: white;">An independent game development studio established with&nbsp;<br>a vision of advancing future game design.<br></p>
+                    <p class="lead trademark mobile-br" style="color: white;">An independent game development studio established with a vision of advancing future game design.<br></p><a class="btn btn-primary text-uppercase" role="button" style="width: 38%;" href="home/announcements.html">Announcements</a></div>
+            </div>
+        </header>
+    </div>
+</div>
+<div class="information text-center">
+    <div class="contents">
+        <h1 id="overview" class="text-center">Overview</h1>
+        <p class="text-center">We are an established indie game development studio experienced in bringing ideas to life through innovative game design. We are primarily a small team of ambitious college students who wish to use their creativity to make a difference on
+            our planet, as well as to create powerful and memorable gaming experiences.</p>
+        <p class="text-center">Together, we created a relatively small community of enthusiastic modders, streamers, and content creators.</p>
+        <div class="row mt-4">
+            <div class="col-sm-4 order-1"><img class="mb-3" src="{% static 'img/overview/game-design.svg' %}">
+                <h2>Game Design</h2>
+                <p>At Nexus Realms, creative game design is the basis for our creative ambitions. By creating unique player experiences, we inspire future game design.<br></p>
+                <p style="font-weight: bold;"><strong>Our design projects feature unique ideas!</strong><br></p>
+            </div>
+            <div class="col-sm-4 order-2"><img class="mb-3" src="{% static 'img/overview/content-creation.svg' %}">
+                <h2>Content Creation</h2>
+                <p>Whether you are a content creator or a hobbyist, we would like to support your amazing ideas. Regardless of your experience, we will help promote your ideas.<br></p>
+                <p style="font-weight: bold;"><strong>We support our mod authors!</strong><br></p>
+            </div>
+            <div class="col-sm-4 order-3"><img class="mb-3" src="{% static 'img/overview/community.svg' %}">
+                <h2>Community</h2>
+                <p>Our gaming community (started in 2020) continues to create a calm, relaxed setting for everyone, no matter if you are a casual gamer or a professional streamer.<br></p>
+                <p style="font-weight: bold;"><strong>Our community is open to all walks of life! 💖</strong><br></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-img-2">
+    <div class="quote text-center">
+        <blockquote class="blockquote">
+            <p class="mb-0"><em>"Engineering is the science that </em><br><em>inspires the future of game design."</em></p>
+            <footer class="blockquote-footer">George Testo</footer>
+        </blockquote>
+    </div>
+</div>
+<div class="information text-center">
+    <div class="contents">
+        <h1 id="teammembers">Team Members</h1>
+        <p>Establishing ourselves as a indie game development studio and as a community requires a team that can work together to cover all aspects of proposed projects. This team includes: project managers, programmers, artists, designers, engineers,
+            etc. Most members of our team are considered jacks of all trades and can perform a range of duties.<br></p>
+        <p>It is truly amazing to see how far we have come as independent developers within just a couple of years!<br></p>
+        <div class="row mt-4">
+            <div class="col-sm-4 order-1"><img class="mb-3" src="{% static 'img/teammembers/metro1102.svg' %}">
+                <h2>George Testo</h2>
+                <p style="font-weight: bold;"><strong>Networking &amp; Computer Systems</strong><br></p>
+                <p>An aspiring programmer and software engineer with experience in a multitude of software design projects.<br></p>
+            </div>
+            <div class="col-sm-4 order-2"><img class="mb-3" src="{% static 'img/teammembers/shadow987e.svg' %}">
+                <h2>Moses Osuna<br></h2>
+                <p style="font-weight: bold;"><strong>Information Technology</strong><br></p>
+                <p>An aspiring network engineer who's knowledgeable of server backends, orchestral score, and musicianship.<br></p>
+            </div>
+            <div class="col-sm-4 order-3"><img class="mb-3" src="{% static 'img/teammembers/snoopalpaca.svg' %}">
+                <h2>Ameer Nessaee<br></h2>
+                <p style="font-weight: bold;"><strong>Software Engineering</strong><br></p>
+                <p>An aspiring aerospace and audio engineer who's dedicated to creating intricate software applications.<br></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-img-3">
+    <div class="quote text-center">
+        <blockquote class="blockquote">
+            <p class="mb-0"><em>"Your boundaries are reflected by your desire</em><br><em>to learn from yourself and through others."</em><br></p>
+            <footer class="blockquote-footer">Moses Osuna</footer>
+        </blockquote>
+    </div>
+</div>
+<div class="information">
+    <div class="contents">
+        <h1 id="contactus" style="margin-left: 15px;margin-right: 15px;">Contact Us</h1>
+        <div class="row">
+            <div class="col-sm-8 order-1">
+                <p>If you wish to obtain more information or you are simply interested in applying to be apart of our growing team, please do not be afraid to use our contact form below. We'll respond to your message as soon as we can!<br></p>
+                <p style="font-weight: bold;"><strong>Thank you for taking your time to message us and express your interest!</strong><br></p>
+                {% include 'home/forms/contact-form.html' %}
+            </div>
+            <div class="col-sm-4 order-2">
+                <h2>Our Locations<br></h2>
+                <p>Tucson, Arizona</p>
+                <p>Flagstaff, Arizona</p>
+                <h2>Legal Disclosures<br></h2>
+                <a class="d-block mt-3 mb-3" href="home/policies.html" style="font-size: 20px;">Privacy Policy</a>
+                <a class="d-block mb-3" href="home/terms-conditions.html" style="font-size: 20px;">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
