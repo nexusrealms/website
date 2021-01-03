@@ -2,8 +2,6 @@
 
 {% load static %}
 
-{% load wagtailcore_tags %}
-
 {% block body_class %}template-homepage{% endblock %}
 
 {% block title %}
@@ -52,8 +50,6 @@
 </div>
 <div class="information text-center">
     <div class="contents">
-        <h1 class="text-center">{{ page.title }}</h1>
-        <div class="body">{{ page.overview|richtext }}</div>
         <h1 id="overview" class="text-center">Overview</h1>
         <p class="text-center">We are an established indie game development studio experienced in bringing ideas to life through innovative game design. We are primarily a small team of ambitious college students who wish to use their creativity to make a difference on
             our planet, as well as to create powerful and memorable gaming experiences.</p>
