@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-policies{% endblock %}
+
+{% block title %}
+<title>{{ page.title }} | Nexus Realms</title>
+{% endblock %}
+
+{% block content %}
+{% include 'navigation.html' %}
+<div class="information">
+  <div class="contents">
+    <h1 class="text-center" style="margin-top: 2rem;">{{ page.date }}</h1>
+    <h2 class="text-center" style="margin-bottom: 2rem;">{{ page.title }}</h2>
+    <div class="body">{{ page.body|richtext }}</div>
+  </div>
+</div>
+{% endblock %}

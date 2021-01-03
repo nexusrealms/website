@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-announcements{% endblock %}
+
 {% block title %}
 <title>Announcements | Nexus Realms</title>
 {% endblock %}
@@ -8,8 +12,15 @@
 {% include 'navigation.html' %}
 <div class="information">
     <div class="contents">
-        <h1 class="text-center" style="margin-top: 2rem;/*margin-bottom: 2rem;*/">Announcements</h1>
-        <p class="text-center">No Announcements!</p>
+        <h1 class="text-center" style="margin-top: 2rem;/*margin-bottom: 2rem;*/">{{ page.title }}</h1>
+        <div class="text-center body">{{ page.body|richtext }}</div>
+        <div class="text-center">
+        {% for announcementpost in page.get_children %}
+            <h2>{{ announcementpost.specific.date}}</h2>
+            <h3><a href="{% pageurl announcementpost %}">{{ announcementpost.title }}</a></h3>
+            {{ announcementpost.specific.body|richtext|truncatewords:120 }}
+        {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

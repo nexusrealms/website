@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
+
 {% load static %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
 
 {% block title %}
 <title>Home | Nexus Realms</title>
@@ -40,13 +45,15 @@
                 <div class="logo"><img src="{% static 'img/nexus-realms.svg' %}"></div>
                 <div class="text-center service">
                     <p class="lead trademark desktop-br" style="color: white;">An independent game development studio established with&nbsp;<br>a vision of advancing future game design.<br></p>
-                    <p class="lead trademark mobile-br" style="color: white;">An independent game development studio established with a vision of advancing future game design.<br></p><a class="btn btn-primary text-uppercase" role="button" style="width: 38%;" href="home/announcements.html">Announcements</a></div>
+                    <p class="lead trademark mobile-br" style="color: white;">An independent game development studio established with a vision of advancing future game design.<br></p><a class="btn btn-primary text-uppercase" role="button" style="width: 38%;" href="announcements/">Announcements</a></div>
             </div>
         </header>
     </div>
 </div>
 <div class="information text-center">
     <div class="contents">
+        <h1 class="text-center">{{ page.title }}</h1>
+        <div class="body">{{ page.overview|richtext }}</div>
         <h1 id="overview" class="text-center">Overview</h1>
         <p class="text-center">We are an established indie game development studio experienced in bringing ideas to life through innovative game design. We are primarily a small team of ambitious college students who wish to use their creativity to make a difference on
             our planet, as well as to create powerful and memorable gaming experiences.</p>
@@ -125,8 +132,8 @@
                 <p>Tucson, Arizona</p>
                 <p>Flagstaff, Arizona</p>
                 <h2>Legal Disclosures<br></h2>
-                <a class="d-block mt-3 mb-3" href="home/policies.html" style="font-size: 20px;">Privacy Policy</a>
-                <a class="d-block mb-3" href="home/terms-conditions.html" style="font-size: 20px;">Terms &amp; Conditions</a>
+                <a class="d-block mt-3 mb-3" href="policies/" style="font-size: 20px;">Privacy Policy</a>
+                <a class="d-block mb-3" href="terms-conditions/" style="font-size: 20px;">Terms &amp; Conditions</a>
             </div>
         </div>
     </div>
