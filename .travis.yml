@@ -2,9 +2,11 @@ language: python
 cache: pip
 python:
     - "3.8"
+env:
+  global:
+    secure: Z+Xr4OZ27QAxZW6oYI/pPNb+HZG2agL9hXvRmLI7FTrX/6/rSlDW3n1/E05+GY6gxotNxqDiVAtIk1Noa0PO47/YXCLlWY2QFSiEPOz8bmXoA70H09uZPnXreHIBHPy0BhukIWbcG/D4m5H51iwH4o0VFTGg9AQW6RrrUh+KRhdQQFoek/8Z1l3vo8RDxLowKTlYbGwmqDq77k7WzDU/KG+QJ3qOKOww/34FOhk+BgtRw/2vuIcGYq36R0sMIuXBhggHhXCJWPQ+L78PpLGrn9O6Til9ORFrC9RndYPyLhT8RKapjMpHmFagDZsjQr8+Q6wVyaSV86R5JIxA38faYLsrstcsfi4ABexHpqUH90OyTajby7WFnd2oZSEtro7HL8xWn6QvDKuCT0SFCmbSI+4PcXHAVcrDmu4aRb6vTFMHxH7pkHXeIZEllpPuQ9MIXNBtZWbyTs2hlZtEakqNXH4dOm5rvR4z7NHnh7WlVpDb4TslUWxWRxXezrQUfamHdamP/VYAyhqmoNhTasf+faU6P/LZFhldxiW1inMABpqrRELZ8ii/troIIvD60Z7ZMhP3MdgAmY0EMvdOvAZmW1t7M8mxr9iUpgA97UahgWYShTMALdmb+CX89OYiNXnxtTi68OHNjA0C+loSSpjhrLobtGT0MFn7+mpYcdDchbY=
 before_install:
-    - openssl aes-256-cbc -K $encrypted_7509e548d36f_key -iv $encrypted_7509e548d36f_iv
-      -in .travis/git.enc -out .travis/git -d
+    - echo $super_secret_password | gpg --passphrase-fd 0 git.gpg
 install:
     - pip install -r requirements.txt
     - pip install coveralls
