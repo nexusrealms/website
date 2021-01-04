@@ -1,0 +1,24 @@
+[run]
+branch = True
+source = core
+
+[report]
+exclude_lines =
+
+    # Exclude if must re-able the standard pragma:
+    if self.debug:
+    pragma: no cover
+
+    # Exclude if tests do not hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+    # Exclude if non-runnable code does not run:
+    if 0:
+    if __name__ == .__main__.:
+
+ignore_errors = True
+
+omit =
+    tests/*
+    website/*

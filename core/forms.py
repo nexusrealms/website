@@ -1,6 +1,15 @@
+'''Classes & Variables for Forms
+
+This module contains classes and variables
+that allow for the functionality of forms.
+'''
+
 from django import forms
 
 class ContactForm(forms.Form):
+
+    '''Contains variables for a contact form.'''
+
     firstname = forms.CharField(
         label=('First Name'),
         required=True,

@@ -1,12 +1,22 @@
+'''Views for Django
+
+This module contains "views" or functions that take a web request
+and returns a web response. Also contains important HttpReponse linking
+for certain pages. For example, the index function corresponds with the
+NR homepage and its use of a contact form that requires unique methods.
+'''
+
 from os import environ
-from core.forms import ContactForm
 from django.shortcuts import redirect, render
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.contrib import messages
+from core.forms import ContactForm
 
 def index(request):
+
+    '''Function that contains methods for the homepage & contact form.'''
 
     if request.method == 'GET':
         form = ContactForm()
@@ -43,15 +53,3 @@ def index(request):
             return redirect('/')
 
     return render(request, 'home/index.html', {'form': form})
-
-def announcements(request):
-    '''Binds URL and returns announcements'''
-    return render(request, 'home/announcements.html')
-
-def policies(request):
-    '''Binds URL and returns policies'''
-    return render(request, 'home/policies.html')
-
-def terms_conditions(request):
-    '''Binds URL and returns terms and conditions'''
-    return render(request, 'home/terms-conditions.html')

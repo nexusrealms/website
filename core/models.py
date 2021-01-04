@@ -1,16 +1,27 @@
+'''Classes for Django & Wagtailcms Models
+
+This module specifically contains classes for Django and Wagtailcms models.
+Some classes act as wagtail page models allowing for new page configurations.
+'''
+
 from django.db import models
 
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
 
-class Home(Page):
+class Home(Page): # pylint: disable=too-many-ancestors
+
+    '''Wagtailcms page model for the homepage (index).'''
+
     parent_page_types = []
 
-    def get_template(self,request):
-        return 'home/index.html'
+    template = 'home/index.html'
 
-class Announcements(Page):
+class Announcements(Page): # pylint: disable=too-many-ancestors
+
+    '''Wagtailcms page model for the announcements page.'''
+
     parent_page_types = []
     body = RichTextField(blank=True)
 
@@ -18,10 +29,12 @@ class Announcements(Page):
         FieldPanel('body', classname="full")
     ]
 
-    def get_template(self, request):
-        return 'home/announcements.html'
+    template = 'home/announcements.html'
 
-class Announcement(Page):
+class Announcement(Page): # pylint: disable=too-many-ancestors
+
+    '''Wagtailcms page model for individual announcement pages.'''
+
     parent_page_types = ['core.Announcements']
     date = models.DateField("Post Date")
     body = RichTextField(blank=True)
@@ -31,10 +44,12 @@ class Announcement(Page):
         FieldPanel('body', classname="full"),
     ]
 
-    def get_template(self, request):
-        return 'home/page.html'
+    template = 'home/page.html'
 
-class Policies(Page):
+class Policies(Page): # pylint: disable=too-many-ancestors
+
+    '''Wagtailcms page model for the policies page.'''
+
     parent_page_types = []
     body = RichTextField(blank=True)
 
@@ -42,10 +57,12 @@ class Policies(Page):
         FieldPanel('body', classname="full")
     ]
 
-    def get_template(self, request):
-        return 'home/page.html'
+    template = 'home/page.html'
 
-class Terms(Page):
+class Terms(Page): # pylint: disable=too-many-ancestors
+
+    '''Wagtailcms page model for the terms & conditions page.'''
+
     parent_page_types = []
     body = RichTextField(blank=True)
 
@@ -53,6 +70,4 @@ class Terms(Page):
         FieldPanel('body', classname="full")
     ]
 
-    def get_template(self, request):
-        return 'home/page.html'
-
+    template = 'home/page.html'

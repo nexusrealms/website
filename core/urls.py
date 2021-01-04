@@ -1,8 +1,12 @@
-from core.views import announcements
-from django.urls import path, include
+'''URL Patterns for Django
+
+This module contains URL patterns for static pages.
+'''
+
+from django.urls import re_path
 
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    re_path(r'^$', views.index, name='index'),
 ]
